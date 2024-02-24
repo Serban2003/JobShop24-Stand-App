@@ -1,0 +1,86 @@
+:root{
+    --crazy-blue: #3939FF;
+    --depressing-purple: #290744;
+    --angel-white: #FFFFFF;
+    --dirty-angel: #dbdada;
+    --radius: 3px;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #dbdada;
+}
+
+.main-content{
+    margin-top: 30px;
+}
+
+.map{
+    height: 500px;
+    width: 800px;
+    background-color: var(--depressing-purple);
+}
+
+.stand{
+    height: 50px;
+    width: 80px;
+    background-color: var(--crazy-blue);
+    color: var(--angel-white);
+    transition: all 0.3s;
+    border-radius: var(--radius);
+}
+
+.stand:hover{
+    cursor: pointer;
+    background-color: var(--angel-white);
+    color: var(--crazy-blue);
+}
+
+.log-button, .custom-button{
+    color: var(--crazy-blue);
+    background-color: var(--angel-white);
+}
+  
+.log-button:hover, .custom-button:hover{
+    color: var(--angel-white);
+    background-color: var(--crazy-blue);
+}
+  
+.log-button{
+    width: 100px;
+    display: none;
+}
+/* Navbar */
+.navbar {
+    background-image: url("../images/holografic-background.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    font-size: 20px;
+}
+
+.navbar-brand .logo {
+    height: 50px;
+}
+
+#navbarSupportedContent{
+    flex-grow: 0;
+}
+
+.navbar-toggler-icon {
+    background-image: url("../images/menu_icon.png");
+    filter: invert();
+    width: 40px;
+    height: 40px;
+}
+
+@media only screen and (max-width: 768px) {
+    .navbar .navbar-collapse {
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+        margin: 0 0 -0.5rem -1rem;
+    }
+}

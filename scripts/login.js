@@ -1,6 +1,4 @@
 function login() {
-    var login_modal = document.getElementById("loginModal");
-
     var email = document.getElementById("company-id").value + "@jobshop.cj";
     var password = document.getElementById("password").value;
 

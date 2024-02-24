@@ -51,6 +51,7 @@ body{
     width: 100px;
     display: none;
 }
+
 /* Navbar */
 .navbar {
     background-image: url("../images/holografic-background.jpg");
@@ -78,9 +79,16 @@ body{
 @media only screen and (max-width: 768px) {
     .navbar .navbar-collapse {
         background-color: rgba(0, 0, 0, 0.5);
-        display: flex;
-        justify-content: center;
-        padding: 1rem 1.5rem;
-        margin: 0 0 -0.5rem -1rem;
+        margin-bottom: -0.5rem;
     }
+}
+
+nav .container-fluid{
+    --bs-gutter-x: 0px;
+}
+
+.abs-center-x {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }

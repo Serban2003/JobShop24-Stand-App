@@ -58,6 +58,12 @@ body{
     display: none;
 }
 
+.alert-custom{
+    position: absolute;
+    width: 100%;
+    bottom:0;
+}
+
 /* Navbar */
 .navbar {
     background-image: url("../images/holografic-background.jpg");
@@ -98,3 +104,26 @@ nav .container-fluid{
     left: 50%;
     transform: translateX(-50%);
 }
+
+
+/* -------- Scroll bar -------- */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--angel-white);
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--crazy-blue);
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--depressing-purple);
+  }

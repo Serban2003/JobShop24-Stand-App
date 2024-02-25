@@ -18,6 +18,7 @@ const database = firebase.database();
 
 var companyID = '';
 var companyName = '';
+var companyStand = 0;
 
 firebase.auth().onAuthStateChanged(function(company) {
 
@@ -27,10 +28,7 @@ firebase.auth().onAuthStateChanged(function(company) {
     document.getElementById("log-out-button").style.display = "block";
     document.getElementById("log-in-message").style.display = "block";
 
-
     companyID = company.email.substring(0, company.email.indexOf('@'));
-    console.log(companyID);
-
     retrieveCompanyData(companyID);
   } else {
     console.log("No company connected");
@@ -49,6 +47,7 @@ function retrieveCompanyData(ID){
       const data = snapshot.val();
       if(data){
         companyName = data.name;
+        companyStand = data.stand;
       }
   }).then(updateData);
 }

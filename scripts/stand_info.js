@@ -7,6 +7,7 @@ function retrieveStandInfo(){
 
     stands.once('value', (snapshot) => {
       const data = snapshot.val();
+      
       standInfo = Object.values(data);
       standKeys = Object.keys(data);
       nrStands = standKeys.length;
@@ -24,7 +25,7 @@ function updateStands(){
         var idStand = "stand-"+ standKeys[i];
         
         var stand = document.getElementById(idStand);
-        stand.innerHTML = standInfo[i];
+        stand.innerHTML = standInfo[i].company;
         stand.classList.add("ocuppied-stand");
     }
 }

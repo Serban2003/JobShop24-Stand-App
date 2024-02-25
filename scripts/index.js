@@ -15,20 +15,45 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
 
-firebase.auth().onAuthStateChanged(function(user) {
-  if (user) {
-    console.log(user);
+
+var companyID = '';
+var companyName = '';
+
+firebase.auth().onAuthStateChanged(function(company) {
+
+  if (company) {
+    console.log(company.email);
     document.getElementById("log-in-button").style.display = "none";
     document.getElementById("log-out-button").style.display = "block";
     document.getElementById("log-in-message").style.display = "block";
+
+
+    companyID = company.email.substring(0, company.email.indexOf('@'));
+    console.log(companyID);
+
+    retrieveCompanyData(companyID);
   } else {
-    console.log("No user connected");
+    console.log("No company connected");
     document.getElementById("log-out-button").style.display = "none";
     document.getElementById("log-in-button").style.display = "block";
     document.getElementById("log-in-message").style.display = "none";
   }
+  
+  retrieveStandInfo();
 });
 
- 
+function retrieveCompanyData(ID){
+  var companyDetails = database.ref('company/' + ID);
 
+  companyDetails.once('value', (snapshot) => {
+      const data = snapshot.val();
+      if(data){
+        companyName = data.name;
+      }
+  }).then(updateData);
+}
+
+function updateData(){
+  document.getElementById("companyName").innerHTML = companyName;
+}
 

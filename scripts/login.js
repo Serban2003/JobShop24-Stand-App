@@ -10,10 +10,9 @@ function login() {
         .then((userCredential) => {
             // Signed in 
             const company = userCredential.user;
-            var database_ref = database.ref();
+            var database = firebase.database;
             
             document.getElementById("close-modal").click();
-        
         })
         .catch((error) => {
             const errorCode = error.code;

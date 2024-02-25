@@ -3,6 +3,7 @@
     --depressing-purple: #290744;
     --angel-white: #FFFFFF;
     --dirty-angel: #dbdada;
+    --ocuppied: #42cf00;
     --radius: 3px;
 }
 
@@ -35,6 +36,11 @@ body{
     cursor: pointer;
     background-color: var(--angel-white);
     color: var(--crazy-blue);
+}
+
+.ocuppied-stand{
+    pointer-events: none;
+    background-color: var(--ocuppied);
 }
 
 .log-button, .custom-button{

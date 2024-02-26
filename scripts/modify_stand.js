@@ -57,7 +57,7 @@ function updateStands() {
 
         if (standKeys.includes(String(i))) {
             if (i == companyStand) {
-                stand.classList.remove("occupied-stand");
+                stand.classList.remove("ocuppied-stand");
                 stand.classList.add("selected-stand");
                 console.log(i);
             } else {

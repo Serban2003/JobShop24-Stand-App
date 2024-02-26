@@ -19,9 +19,9 @@ const database = firebase.database();
 var companyID = '';
 var companyName = '';
 var companyStand = 0;
-var nrStands = 4;
 var standKeys = '';
 var standInfo = '';
+var nrStands = 4;
 
 firebase.auth().onAuthStateChanged(function (company) {
 

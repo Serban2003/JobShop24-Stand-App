@@ -98,23 +98,33 @@ function unselectStand() {
             name: companyName,
             stand: 0
         }).then(function () {
-            /* Retrieve stand info */
-            var stands = database.ref('stands/');
-
-            stands.once('value', (snapshot) => {
+            /* Retrieve company details */
+            var companyDetails = database.ref('company/' + companyID);
+            companyDetails.once('value', (snapshot) => {
                 const data = snapshot.val();
-
-                standInfo = Object.values(data);
-                standKeys = Object.keys(data);
-            }).then(
-                function () {
-                    console.log(standInfo);
-                    console.log(standKeys);
-                    updateStands();
-                    $('#deleteModal').modal('hide');
+                if (data) {
+                    companyName = data.name;
+                    companyStand = data.stand;
                 }
-            );
+            }).then(function () {
+                /* Retrieve stand info */
+                var stands = database.ref('stands/');
 
+                stands.once('value', (snapshot) => {
+                    const data = snapshot.val();
+
+                    standInfo = Object.values(data);
+                    standKeys = Object.keys(data);
+                }).then(
+                    function () {
+                        console.log(standInfo);
+                        console.log(standKeys);
+                        updateStands();
+                        $('#deleteModal').modal('hide');
+                    }
+                );
+
+            });
         });
     });
 }

@@ -62,7 +62,6 @@ firebase.auth().onAuthStateChanged(function (company) {
       );
     });
 
-
   } else {
     console.log("No company connected");
     document.getElementById("log-out-button").style.display = "none";
@@ -77,6 +76,12 @@ firebase.auth().onAuthStateChanged(function (company) {
 
       standInfo = Object.values(data);
       standKeys = Object.keys(data);
-    });
+    }).then(
+      function () {
+        console.log(standInfo);
+        console.log(standKeys);
+        updateStands();
+      }
+    );
   }
 });

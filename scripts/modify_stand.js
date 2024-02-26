@@ -8,7 +8,7 @@ function selectStand(number) {
             $('#deleteModal').modal('show');
             return;
         } else {
-            appendAlert("You have already chosen a stand!", "If you want to choose another one, delete your curent stand and then try again.", "danger");
+            appendAlert("You have already chosen a stand!", "If you want to choose another one, unselect your curent stand and then try again.", "danger");
             return;
         }
     }

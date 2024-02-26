@@ -21,7 +21,7 @@ var companyName = '';
 var companyStand = 0;
 var standKeys = '';
 var standInfo = '';
-var nrStands = 4;
+var nrStands = 8;
 
 firebase.auth().onAuthStateChanged(function (company) {
 
@@ -32,7 +32,8 @@ firebase.auth().onAuthStateChanged(function (company) {
     document.getElementById("log-in-message").style.display = "block";
 
     companyID = company.email.substring(0, company.email.indexOf('@'));
-
+    companyID = companyID.charAt(0).toUpperCase() + companyID.charAt(1).toUpperCase() + companyID.slice(2);
+    console.log(companyID);
     /* Retrieve company details */
     var companyDetails = database.ref('company/' + companyID);
 
@@ -41,6 +42,7 @@ firebase.auth().onAuthStateChanged(function (company) {
       if (data) {
         companyName = data.name;
         companyStand = data.stand;
+        console.log(companyName);
       }
     }).then(function () {
       document.getElementById("companyName").innerHTML = companyName;

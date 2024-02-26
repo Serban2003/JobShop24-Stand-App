@@ -4,61 +4,45 @@
     --angel-white: #FFFFFF;
     --dirty-angel: #dbdada;
     --ocuppied: #42cf00;
-    --selected: #d1c601;
+    --selected: #dac60f;
     --radius: 3px;
 }
 
 body{
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
-    background-color: #dbdada;
+    background-color: var(--angel-white);
+}
+
+.text-crazy-blue{
+    color: var(--crazy-blue);
 }
 
 .main-content{
     margin-top: 30px;
 }
 
-.map{
-    height: 500px;
-    width: 800px;
-    background-color: var(--depressing-purple);
-}
-
-.stand{
-    height: 50px;
-    width: 80px;
-    background-color: var(--crazy-blue);
-    color: var(--angel-white);
-    transition: all 0.3s;
-    border-radius: var(--radius);
-}
-
-.stand:hover{
-    cursor: pointer;
-    background-color: var(--angel-white);
-    color: var(--crazy-blue);
-}
-
-.ocuppied-stand{
-    pointer-events: none;
-    background-color: var(--ocuppied);
-}
-
-.selected-stand{
-    pointer-events: all;
-    background-color: var(--selected);
-}
-
-.log-button, .custom-button, .custom-button-inverse:hover{
+.log-button, .custom-button, .unselect-button{
     color: var(--crazy-blue);
     background-color: var(--angel-white);
 }
   
-.log-button:hover, .custom-button:hover, .custom-button-inverse{
+.log-button:hover, .custom-button:hover, .close-button{
     color: var(--angel-white);
     background-color: var(--crazy-blue);
 }
   
+.unselect-button:hover{
+    background-color: var(--dirty-angel);
+    color: var(--crazy-blue);
+}
+
+
+.close-button:hover{
+    background-color: #2d2dff;
+}
+
+
 .log-button{
     width: 100px;
     display: none;

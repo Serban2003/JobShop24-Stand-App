@@ -40,18 +40,23 @@ function selectStand(number) {
                     standKeys = Object.keys(data);
                 }).then(
                     function () {
-                        console.log(standInfo);
-                        console.log(standKeys);
                         updateStands();
                     }
-                );
+                ).catch((error) => {
+                    appendAlert(error.code, error.message, "danger");
+                });
+            }).catch((error) => {
+                appendAlert(error.code, error.message, "danger");
             });
+        }).catch((error) => {
+            appendAlert(error.code, error.message, "danger");
         });
+    }).catch((error) => {
+        appendAlert(error.code, error.message, "danger");
     });
 }
 
 function updateStands() {
-    console.log(standInfo);
     for (var i = 1; i <= nrStands; ++i) {
         var stand = document.getElementById("stand-" + i);
 
@@ -59,7 +64,7 @@ function updateStands() {
             if (i == companyStand) {
                 stand.classList.remove("ocuppied-stand");
                 stand.classList.add("selected-stand");
-                console.log(i);
+                console.log("Selected stand: " + i);
             } else {
                 stand.classList.add("ocuppied-stand");
                 stand.classList.remove("selected-stand");
@@ -117,14 +122,18 @@ function unselectStand() {
                     standKeys = Object.keys(data);
                 }).then(
                     function () {
-                        console.log(standInfo);
-                        console.log(standKeys);
                         updateStands();
                         $('#deleteModal').modal('hide');
                     }
-                );
+                ).catch((error) => {
+                    appendAlert(error.code, error.message, "danger");
+                });
 
+            }).catch((error) => {
+                appendAlert(error.code, error.message, "danger");
             });
+        }).catch((error) => {
+            appendAlert(error.code, error.message, "danger");
         });
     });
 }

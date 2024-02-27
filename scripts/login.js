@@ -2,9 +2,6 @@ function login() {
     var email = document.getElementById("company-id").value + "@jobshop.cj";
     var password = document.getElementById("password").value;
 
-    console.log(email);
-    console.log(password);
-
     const auth = firebase.auth();
     auth.signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
@@ -21,6 +18,5 @@ function login() {
             var error_message = document.getElementById("error-message");
             error_message.innerHTML = "Incorrect ID or password!";
             error_message.style.display = "block";
-
         });
 }

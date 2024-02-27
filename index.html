@@ -24,7 +24,7 @@
             <h1 class="text-white order-2 ms-3">JobShop® Stand App</h1>
             <div class="collapse navbar-collapse order-4" id="navbarSupportedContent">
                 <div class="d-flex justify-content-center align-items-center gap-3 p-3">
-                    <div class="text-white" id="log-in-message">Welcome, <span id="companyName"></span>!</div>
+                    <div class="text-white" id="log-in-message"><span id="companyName"></span></div>
                     <button class="btn log-button" data-bs-toggle="modal" data-bs-target="#loginModal"
                         id="log-in-button">Log In</button>
                     <button class="btn log-button" onclick="logout()" id="log-out-button">Log Out</button>
@@ -114,7 +114,7 @@
                             <input type="password" class="form-control" id="password" placeholder="Password">
                         </div>
                         <button type="submit" class="btn custom-button" onclick="login()">Log In</button>
-                        <span class="error-message" id="error-message"></span>
+                        <span class="error-message fw-bold" id="error-message"></span>
                     </div>
                 </div>
             </div>

@@ -15,7 +15,6 @@ firebase.initializeApp(firebaseConfig);
 const auth = firebase.auth();
 const database = firebase.database();
 
-
 var companyID = '';
 var companyName = '';
 var companyStand = 0;
@@ -26,14 +25,13 @@ var nrStands = 8;
 firebase.auth().onAuthStateChanged(function (company) {
 
   if (company) {
-    console.log(company.email);
     document.getElementById("log-in-button").style.display = "none";
     document.getElementById("log-out-button").style.display = "block";
     document.getElementById("log-in-message").style.display = "block";
 
     companyID = company.email.substring(0, company.email.indexOf('@'));
     companyID = companyID.charAt(0).toUpperCase() + companyID.charAt(1).toUpperCase() + companyID.slice(2);
-    console.log(companyID);
+
     /* Retrieve company details */
     var companyDetails = database.ref('company/' + companyID);
 
@@ -45,7 +43,7 @@ firebase.auth().onAuthStateChanged(function (company) {
         console.log(companyName);
       }
     }).then(function () {
-      document.getElementById("companyName").innerHTML = companyName;
+      document.getElementById("companyName").innerHTML = "Welcome, " + companyName +"!";
 
       /* Retrieve stand info */
       var stands = database.ref('stands/');
@@ -57,11 +55,11 @@ firebase.auth().onAuthStateChanged(function (company) {
         standKeys = Object.keys(data);
       }).then(
         function () {
-          console.log(standInfo);
-          console.log(standKeys);
           updateStands();
         }
       );
+    }).catch((error) => {
+      appendAlert(error.code, error.message, "danger");
     });
 
   } else {
@@ -80,8 +78,6 @@ firebase.auth().onAuthStateChanged(function (company) {
       standKeys = Object.keys(data);
     }).then(
       function () {
-        console.log(standInfo);
-        console.log(standKeys);
         updateStands();
       }
     );

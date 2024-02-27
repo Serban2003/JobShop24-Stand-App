@@ -12,6 +12,7 @@ body{
     font-family: 'Poppins', sans-serif;
     scroll-behavior: smooth;
     background-color: var(--angel-white);
+    overflow-x: hidden;
 }
 
 .text-crazy-blue{

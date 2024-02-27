@@ -20,7 +20,7 @@ var companyName = '';
 var companyStand = 0;
 var standKeys = '';
 var standInfo = '';
-var nrStands = 8;
+var nrStands = 12;
 
 firebase.auth().onAuthStateChanged(function (company) {
 

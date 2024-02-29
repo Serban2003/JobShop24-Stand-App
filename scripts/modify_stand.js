@@ -59,21 +59,35 @@ function selectStand(number) {
 function updateStands() {
     for (var i = 1; i <= nrStands; ++i) {
         var stand = document.getElementById("stand-" + i);
+        var flippedStand = document.getElementById("flipped-stand-" + i);
 
         if (standKeys.includes(String(i))) {
             if (i == companyStand) {
                 stand.classList.remove("ocuppied-stand");
                 stand.classList.add("selected-stand");
+
+                flippedStand.classList.remove("ocuppied-stand");
+                flippedStand.classList.add("selected-stand");
+
                 console.log("Selected stand: " + i);
             } else {
                 stand.classList.add("ocuppied-stand");
                 stand.classList.remove("selected-stand");
+
+                flippedStand.classList.add("ocuppied-stand");
+                flippedStand.classList.remove("selected-stand");
             }
             stand.innerHTML = standInfo[standKeys.indexOf(String(i))].company;
+            flippedStand.innerHTML = standInfo[standKeys.indexOf(String(i))].company;
         } else {
             stand.classList.remove("occupied-stand");
             stand.classList.remove("selected-stand");
+
+            flippedStand.classList.remove("occupied-stand");
+            flippedStand.classList.remove("selected-stand");
+
             stand.innerHTML = "Stand " + i;
+            flippedStand.innerHTML = "Stand " + i;
         }
     }
 }

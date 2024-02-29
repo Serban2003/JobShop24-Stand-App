@@ -14,6 +14,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <link href="css/style.css" rel="stylesheet">
     <link href="css/map.css" rel="stylesheet">
+    <link href="css/flipped_map.css" rel="stylesheet">
     <link href="css/login.css" rel="stylesheet">
 </head>
 
@@ -21,7 +22,7 @@
     <!-- START NAVBAR -->
     <nav class="navbar navbar-expand-md shadow" id="navbar">
         <div class="container-fluid justify-content-between">
-            <h1 class="text-white order-2 ms-3">JobShop® Stand App</h1>
+            <h1 class="text-white order-2 ms-3 app-title m-0">JobShop® Stand App</h1>
             <div class="collapse navbar-collapse order-4" id="navbarSupportedContent">
                 <div class="d-flex justify-content-center align-items-center gap-3 p-3">
                     <div class="text-white" id="log-in-message"><span id="companyName"></span></div>
@@ -38,7 +39,7 @@
     </nav>
     <!-- END NAVBAR -->
 
-    <div class="main-content container">
+    <div class="main-content mb-5">
         <div class="d-flex flex-column align-items-center gap-4">
             <div class="container map d-flex flex-column gap-4 shadow-lg">
                 <div class="d-flex gap-lg-5 gap-md-4 gap-3 align-items-center mt-5 ms-5">
@@ -89,7 +90,65 @@
                     </div>
                 </div>
             </div>
-            <div class="d-flex gap-5">
+            <div class="container flipped-map flex-row gap-5 shadow-lg align-items-center">
+                <div class="d-flex gap-sm-5 gap-4 align-items-center mt-sm-5 me-sm-5 mb-sm-5 mt-4 me-4 mb-4">
+                    <div class="d-flex gap-sm-5 gap-4 align-items-center justify-content-center">
+                        <div class="d-flex gap-sm-5 gap-4">
+                            <div class="d-flex flex-column gap-sm-5 gap-4">
+                                <div class="flipped-stand btn d-flex justify-content-center align-items-center ms-sm-5 ms-4"
+                                    id="flipped-stand-5" onclick="selectStand(5)">Stand 5</div>
+                                <div class="flipped-stand btn d-flex justify-content-center align-items-center ms-sm-5 ms-4"
+                                    id="flipped-stand-4" onclick="selectStand(4)">Stand 4</div>
+                                <div class="flipped-stand btn d-flex justify-content-center align-items-center ms-sm-5 ms-4"
+                                    id="flipped-stand-3" onclick="selectStand(3)">Stand 3</div>
+                                <div class="flipped-stand btn d-flex justify-content-center align-items-center ms-sm-5 ms-4"
+                                    id="flipped-stand-2" onclick="selectStand(2)">Stand 2</div>
+                                <div class="d-flex flex-column gap-4">
+                                    <div class="flipped-stand btn d-flex justify-content-center align-items-center ms-sm-5 ms-4"
+                                        id="flipped-stand-1" onclick="selectStand(1)">Stand 1</div>
+                                    <div class="flipped-entrance d-flex align-items-center justify-content-center">
+                                        Entrance</div>
+                                </div>
+
+                            </div>
+                            <div class="d-flex flex-column justify-content-center gap-sm-5 gap-4">
+                                <div class="flipped-stand btn d-flex justify-content-center align-items-center"
+                                    id="flipped-stand-8" onclick="selectStand(8)">Stand 8</div>
+                                <div
+                                    class="btn flipped-logistics-table d-flex align-items-center justify-content-center">
+                                    Logistics
+                                </div>
+                                <div class="flipped-stand btn d-flex justify-content-center align-items-center"
+                                    id="flipped-stand-7" onclick="selectStand(7)">Stand 7</div>
+                                <div class="flipped-stand btn d-flex justify-content-center align-items-center"
+                                    id="flipped-stand-6" onclick="selectStand(6)">Stand 6</div>
+                                    <div class="flipped-offset-table"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex flex-column gap-sm-5 gap-4 align-items-center">
+                            <div class="d-flex gap-sm-5 gap-4">
+                                <div class="stand btn d-flex justify-content-center align-items-center" id="flipped-stand-11"
+                                    onclick="selectStand(11)">Stand 11</div>
+                                <div class="stand btn d-flex justify-content-center align-items-center" id="flipped-stand-12"
+                                    onclick="selectStand(12)">Stand 12</div>
+                            </div>
+                            <div class="d-flex gap-sm-5 gap-4">
+                                <div class="stand btn d-flex justify-content-center align-items-center" id="flipped-stand-9"
+                                    onclick="selectStand(9)">Stand 9</div>
+                                <div class="stand btn d-flex justify-content-center align-items-center" id="flipped-stand-10"
+                                    onclick="selectStand(10)">Stand 10</div>
+                            </div>
+                            <div class="flipped-field d-flex align-items-center justify-content-center fs-3">
+                                Basketball court
+                            </div>
+                            <div class="flipped-food-table btn d-flex align-items-center justify-content-center">
+                                Food table</div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex gap-md-5 gap-4 flex-wrap justify-content-center">
                 <div class="d-flex gap-2 align-items-center text-crazy-blue">
                     <div class="standard-stand legend shadow-sm"></div>
                     Free stand
@@ -104,8 +163,11 @@
                 </div>
             </div>
 
-            <p class="fw-bold text-crazy-blue">For any technical support, please contact us at: <a
-                    href="tel:+40 770 844 032" class="text-crazy-blue">+40 770 844 032</a> - Iustinian Șerban.</p>
+            <p class="container fw-bold text-crazy-blue text-center">For any technical support, please contact us at: <a
+                    href="tel:+40 770 844 032" class="text-crazy-blue">+40 770 844 032</a> - Iustinian Șerban.
+            </p>
+
+            
         </div>
     </div>
 

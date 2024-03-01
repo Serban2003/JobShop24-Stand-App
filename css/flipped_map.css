@@ -8,7 +8,7 @@
 
 .flipped-field{
     height: 600px;
-    width: 220px;
+    width: 350px;
     background-color: #dcb17c;
     border-radius: 180px 0 0 180px;
     color: var(--angel-white);
@@ -46,4 +46,10 @@
 .flipped-offset-table{
     height: 50px;
     width: 10px;
+}
+
+@media (min-width: 576px){
+    .flipped-map {
+    max-width: 1200px !important;
+    }
 }
